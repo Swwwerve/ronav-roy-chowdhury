@@ -3,6 +3,7 @@ import project2 from "../assets/projects/project2.webp";
 import project3 from "../assets/projects/project3.jpg";
 import project4 from "../assets/projects/project4.jpg";
 import project5 from "../assets/projects/project5.webp";
+import project6 from "../assets/projects/project6.webp";
 
 export const HERO_CONTENT = `
 I am a driven software engineer with a passion for solving real-world challenges and driving business growth
@@ -38,6 +39,14 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Smart Recipe",
+    image: project6,
+    link: 'https://github.com/Swwwerve/smartrecipe',
+    description:
+      "SMART RECIPE is a scalable, AI-driven recipe recommendation system built with Django, MongoDB, and advanced AI tools (Voyage AI, Claude). It leverages LLMs, retrieval-augmented generation, vector embeddings, and semantic search to deliver real-time, personalized recipe suggestions for users.",
+    technologies: ["AWS RDS", "AWS KMS", "PostgreSQL", "SQL", "TypeScript", "React"],
+  },
   {
     title: "NOVUS Cybersecurity",
     image: project1,
