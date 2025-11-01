@@ -24,7 +24,7 @@ like The Boys which are two of my favourites respectively.
 
 export const EXPERIENCES = [
   {
-    year: "Apr 2024. - Present",
+    year: "Apr 2024. - APR. 2025",
     role: "Associate Web Developer",
     company: "monstrARTity",
     description: `
