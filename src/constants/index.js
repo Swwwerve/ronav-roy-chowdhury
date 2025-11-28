@@ -6,26 +6,41 @@ import project5 from "../assets/projects/project5.webp";
 import project6 from "../assets/projects/project6.webp";
 
 export const HERO_CONTENT = `
-I am a driven software engineer with a passion for solving real-world challenges and driving business growth
-via innovative solutions. Namely, I aim to leverage my technical expertise in cloud platforms like AWS and GCP, and ML tools
-like TensorFlow and AWS SageMaker to develop scalable and efficient applications. I am also well-versed in full-stack
-development, having worked with technologies like React and HTML/Tailwind CSS on the front-end, and SQL, PostgreSQL, Python,
-and Java on the back-end to present my solutions. 
+I am a versatile Software & Biomedical Engineering student who is passionate about cloud computing, DevOps, backend engineering, and the rapidly evolving world of LLM 
+technologies. I enjoy building real-world, scalable solutions using AWS, GCP, and modern ML tools, and I love experimenting with frameworks like LangChain and MCP to push 
+what AI systems can do.
+On the development side, I work across the stack—using React and modern front-end tools to bring ideas to life, and Python, Java, SQL, and PostgreSQL to build reliable 
+backend systems. Above all, I am driven by learning, solving meaningful problems, and creating technology that actually helps people.
 `;
 
 export const ABOUT_TEXT = `
 I am a software and biomedical engineering student at McMaster University with a passion for leveraging technology 
 to create scalable solutions to real-world problems. My goal is to contribute meaningfully to the software industry 
 by developing innovative systems that address complex challenges and drive positive change. Beyond coding, I enjoy 
-staying active through sports like soccer, where I participate in university intramurals, as well as basketball, 
-badminton, and volleyball. I also make time for the gym as well as watching movies like The Dark Knight and TV shows
-like The Boys which are two of my favourites respectively.
+staying active through MMA training - specifically Muay Thai and Brazilian Jiu Jitsu, and sports like soccer/volleyball, where I participate in university intramurals. 
+I also make time for watching movies like The Dark Knight and TV shows like The Boys which are two of my favourites respectively.
 `;
 
 export const EXPERIENCES = [
   {
-    year: "Apr 2024. - APR. 2025",
-    role: "Associate Web Developer",
+    year: "SEPT. 2025 - DEC. 2025",
+    role: "Software Engineer Intern",
+    company: "RBC Capital Markets",
+    description: `
+    • Designed and deployed custom Kubernetes CRDs to securely retrieve secrets from HashiCorp Vault, enabling previously failing CI/CD SAST/DAST jobs to pass consistently, 
+    and improving security validation across 5+ applications. \n
+    • Spearheaded the migration of 10+ applications from Jenkins to GitHub Actions, cutting CI/CD pipeline execution time by
+    30-45% and standardizing deployment workflows across multiple teams. \n
+    • Built an agentic AI automation pipeline using MCP servers and LangChain agents to parse meeting notes and convert them
+    into Jira tickets, reducing manual triage time by 70% for project managers. \n
+    • Developed backend XML and JavaScript modules to create reusable service components, improving code reuse by 25%. \n
+    • Integrated GitOps with ArgoCD to enable fully declarative, version-controlled Kubernetes deployments.
+    `,
+    technologies: ["Kubernetes", "Docker", "CI/CD", "Github Actions", "LangChain", "AWS", "MCP", "GitOps", "ArgoCD", "Jenkins", "Agile", "XML", "TypeScript"]
+  },
+  {
+    year: "APR. 2024 - APR. 2025",
+    role: "Full Stack Developer",
     company: "monstrARTity",
     description: `
     • Designed and optimized various website pages and features using HTML, CSS, and JavaScript to enhance user experience. \n
