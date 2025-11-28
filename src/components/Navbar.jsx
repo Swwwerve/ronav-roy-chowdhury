@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className='mb-20 flex items-center justify-between py-6 sticky top-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800/50 w-full px-8'>
+            <nav className='mb-20 flex items-center justify-between py-4 sticky top-0 z-50 backdrop-blur-md bg-neutral-950/60 border-b border-neutral-800/50 w-full px-8'>
                 <div className='flex flex-shrink-0 items-center'>
                     <img className='mx-2 w-10 hover:scale-110 transition-transform duration-300' src={logo} alt='Logo' />
                 </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Hamburger icon */}
-                <div className='hamburger' onClick={toggleHamburger}>
+                <div className='hamburger md:hidden' onClick={toggleHamburger}>
                     <Hamburger />
                 </div>
             </nav>

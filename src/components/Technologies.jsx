@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { RiReactjsLine } from 'react-icons/ri';
 import { FaPython } from "react-icons/fa";
 import { FaDatabase } from "react-icons/fa";
@@ -25,18 +25,27 @@ const iconVariants = (duration) => ({
 })
 
 const Technologies = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <div id='tech-stack' className='border-b border-neutral-800 pb-24'>
             <motion.h2  
             whileInView={{opacity:1, y:0}}
-            initial={{opacity:0, y: -100}}
+            initial={isMobile ? {opacity: 1, y: 0} : {opacity:0, y: -100}}
             transition={{duration: 0.5}}
             className='my-20 text-center text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>Technology Stack
             </motion.h2>
             
             <motion.div 
             whileInView={{opacity:1, x:0}}
-            initial={{opacity:0, x: -100}}
+            initial={isMobile ? {opacity: 1, x: 0} : {opacity:0, x: -100}}
             transition={{duration: 1.5}}
             className='flex flex-wrap items-center justify-center gap-4'>
                 <motion.div 

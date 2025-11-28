@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/rrc_profile.png";
 import { motion } from 'framer-motion';
 
-const container = (delay) => ({
-    hidden: {x: -100, opacity: 0},
-    visible: {
-        x: 0,
-        opacity: 1,
-        transition: {duration: 0.5, delay: delay}
-    }
-})
-
 const Hero = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const container = (delay) => ({
+        hidden: isMobile ? {x: 0, opacity: 1} : {x: -100, opacity: 0},
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {duration: 0.5, delay: delay}
+        }
+    })
+
+    const imageVariants = {
+        hidden: isMobile ? {x: 0, opacity: 1} : {x: 100, opacity: 0},
+        visible: {x: 0, opacity: 1}
+    }
+
     return (
         <div className='border-b border-neutral-900 pb-20 lg:mb-35'>
             <div className='flex flex-wrap items-center lg:justify-center'>
@@ -48,8 +62,9 @@ const Hero = () => {
                 <div className='w-full lg:w-1/2 lg:p-8 mt-8 lg:mt-0'>
                     <div className='flex justify-center'>
                         <motion.img 
-                        initial={{x:100, opacity:0}} 
-                        animate={{x:0, opacity:1}} 
+                        initial='hidden'
+                        animate='visible'
+                        variants={imageVariants}
                         transition={{duration:1, delay:1.2}}
                         className='rounded-2xl max-w-md w-full border border-neutral-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105' 
                         src={profilePic} alt="Ronav Roy Chowdhury" 

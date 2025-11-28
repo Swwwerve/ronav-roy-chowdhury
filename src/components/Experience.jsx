@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { EXPERIENCES } from '../constants';
 import { motion } from 'framer-motion';
 
 const Experience = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <div id='work-experience' className='border-b border-neutral-900 pb-20'>
             <motion.h2 
-            whileInView={{opacity: 1, y:0}}
-            initial={{opacity: 0, y: -100}}
+            whileInView={isMobile ? {opacity: 1, y: 0} : {opacity: 1, y:0}}
+            initial={isMobile ? {opacity: 1, y: 0} : {opacity: 0, y: -100}}
             transition={{duration: 0.5}}
             className='my-20 text-center text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>
                 Work Experience
@@ -17,13 +26,13 @@ const Experience = () => {
                     <motion.div 
                         key={index} 
                         whileInView={{opacity: 1, y: 0}}
-                        initial={{opacity: 0, y: 50}}
+                        initial={isMobile ? {opacity: 1, y: 0} : {opacity: 0, y: 50}}
                         transition={{duration: 0.6, delay: index * 0.1}}
                         className='group relative'>
                         <div className='flex flex-wrap lg:justify-center'>
                             <motion.div 
                             whileInView={{opacity: 1, x:0}}
-                            initial={{opacity: 0, x: -100}}
+                            initial={isMobile ? {opacity: 1, x: 0} : {opacity: 0, x: -100}}
                             transition={{duration: 1}}
                             className='w-full lg:w-1/4 mb-4 lg:mb-0'>
                                 <div className='inline-block'>
@@ -34,7 +43,7 @@ const Experience = () => {
                             </motion.div>
                             <motion.div 
                             whileInView={{opacity: 1, x:0}}
-                            initial={{opacity: 0, x: 100}}
+                            initial={isMobile ? {opacity: 1, x: 0} : {opacity: 0, x: 100}}
                             transition={{duration: 1}}
                             className='w-full max-w-xl lg:w-3/4 bg-gradient-to-br from-neutral-900/50 to-neutral-800/30 backdrop-blur-sm rounded-2xl p-6 border border-neutral-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 transform hover:-translate-y-1'>
                                 <h6 className='mb-3 text-xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent'>
