@@ -6,8 +6,9 @@ import { FaJava } from "react-icons/fa";
 import { FaNodeJs } from 'react-icons/fa';
 import { FaAws } from "react-icons/fa";
 import { BiLogoPostgresql } from 'react-icons/bi';
-import { SiTensorflow } from "react-icons/si";
+import { SiKubernetes } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
+import { SiGithubactions } from "react-icons/si";
 import { motion } from 'framer-motion';
 
 const iconVariants = (duration) => ({
@@ -99,7 +100,7 @@ const Technologies = () => {
                 initial='initial'
                 animate='animate'
                 className='rounded-2xl border-4 border-neutral-800 p-4'>
-                    <SiTensorflow className='text-7xl text-orange-400' />
+                    <SiKubernetes className='text-7xl text-blue-500' />
                 </motion.div>
 
                 <motion.div 
@@ -108,6 +109,14 @@ const Technologies = () => {
                 animate='animate'
                 className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <BiLogoPostgresql className='text-7xl text-sky-700' />
+                </motion.div>
+
+                <motion.div 
+                variants={iconVariants(3.5)}
+                initial='initial'
+                animate='animate'
+                className='rounded-2xl border-4 border-neutral-800 p-4'>
+                    <SiGithubactions className='text-7xl text-blue-400' />
                 </motion.div>
             </motion.div>
         </div>

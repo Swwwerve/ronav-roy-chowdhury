@@ -9,7 +9,7 @@ const Projects = () => {
                 whileInView={{opacity: 1, y: 0}}
                 initial={{opacity: 0, y: -100}}
                 transition={{duration: 0.5}}
-                className='my-20 text-center text-4xl'>
+                className='my-20 text-4xl'>
                 Projects
             </motion.h2>
             <div>
@@ -20,13 +20,13 @@ const Projects = () => {
                             initial={{opacity: 0, x: -100}}
                             transition={{duration: 1}}
                             className='w-full lg:w-1/4'>
-                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className='inline-block mb-6'>
                                 <img 
                                     src={project.image} 
                                     width={150} 
                                     height={150} 
                                     alt={project.title} 
-                                    className='mb-6 rounded cursor-pointer' 
+                                    className='rounded cursor-pointer' 
                                 />
                             </a>
                         </motion.div>
