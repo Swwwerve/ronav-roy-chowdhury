@@ -5,9 +5,7 @@
 @media (max-width: 767px) {
     .hamburger {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
+        cursor: pointer;
         z-index: 10;
     }
 
